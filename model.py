@@ -1,8 +1,10 @@
 import pickle
+import pathlib
 import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-with open('spam_model/tokenizer.pkl', 'rb') as input:
+cwd = str(pathlib.Path(__file__).parent.resolve())
+with open(cwd + '/spam_model/tokenizer.pkl', 'rb') as input:
     tokenizer = pickle.load(input)
 
 
